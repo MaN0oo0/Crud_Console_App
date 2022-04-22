@@ -1,6 +1,5 @@
 ﻿
 using Demo.BL.Functions;
-using Demo.DAL.Database;
 using Demo.DAL.Etinties;
 
 
@@ -30,8 +29,9 @@ namespace Demo.PL
             Console.WriteLine(String.Format( "2- Retrieve Student Data By Id"));
             Console.WriteLine(String.Format( "3- Create New Student"));
             Console.WriteLine(String.Format( "4- Edit Existing Student"));
-            Console.WriteLine(String.Format( "5- Delete All Students"));
-            Console.WriteLine("______________\n");
+            Console.WriteLine(String.Format( "5- Delete Student By Id"));
+            Console.WriteLine(String.Format( "6- Exit "));
+                Console.WriteLine("______________\n");
             Console.Write("Enter Your Chois: ");
             int chos =int.Parse(Console.ReadLine());
 
@@ -76,8 +76,12 @@ namespace Demo.PL
                         int m =int.Parse(Console.ReadLine());
                         f.DeleteAllData(m);
                         break;
+                    case 6:
+                        Console.Clear();
+                        Console.WriteLine("\n Thank You For Using Our Code :) \n");
+                        break;
                     default:
-                        Console.WriteLine("Try Agine ");
+                        Console.WriteLine(" Try Agine ");
                         break;
                 }
                
@@ -86,6 +90,10 @@ namespace Demo.PL
                 Console.Clear();
 
             } while (str=="Y"||str=="y");
+            if (str!="y"||str!="Y")
+            {
+                Console.WriteLine("Happy Hacking <3 ");
+            }
 
            
          

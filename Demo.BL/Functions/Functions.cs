@@ -38,10 +38,22 @@ namespace Demo.BL.Functions
         {
            var m = stt.std.ToList();
             Console.WriteLine("______________________________________");
-            foreach (var item in m.Where(x=>x.Id==id))
+            try
+            {
+                foreach (var item in m.Where(x => x.Id == id))
+                {
+
+                    Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Age: {item.Age}\n Degree: {item.Degree}\n DateCreation: {item.DateCreation}\n");
+                }
+            }
+            catch (Exception ex)
             {
 
-                Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Age: {item.Age}\n Degree: {item.Degree}\n DateCreation: {item.DateCreation}\n");
+                Console.WriteLine("\nNot Found", ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine($"\n id: {id} Not Found \n");
             }
             Console.WriteLine("______________________________________");
         }
@@ -49,9 +61,30 @@ namespace Demo.BL.Functions
         {
             var m = stt.std.ToList();
 
-            var res=stt.std.Find(id);
-            stt.std.Remove(res);
-            stt.SaveChanges();
+            try
+            {
+                foreach (var item in m.Where(x => x.Id == id))
+                {
+                    
+                    stt.std.Remove(item);
+
+                    stt.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+               
+                Console.WriteLine("\nNot Found",ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine($"\n id: {id} Not Found \n");
+            }
+          
+
+                
+
+           
         }
     }
 }
