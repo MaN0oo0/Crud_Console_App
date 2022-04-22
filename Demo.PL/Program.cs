@@ -1,5 +1,6 @@
 ﻿
 using Demo.BL.Functions;
+using Demo.DAL.Database;
 using Demo.DAL.Etinties;
 
 
@@ -13,9 +14,11 @@ namespace Demo.PL
             ////Set text center
             //int leftOffSet = (Console.WindowWidth / 2);
             //int topOffSet = (Console.WindowHeight / 2);
-          //Console.SetCursorPosition(leftOffSet, topOffSet);
+            //Console.SetCursorPosition(leftOffSet, topOffSet);
 
             #endregion
+            Student std = new Student();
+            Functions f= new Functions();
             string str = "";
             do
             {
@@ -35,15 +38,23 @@ namespace Demo.PL
                 switch (chos)
                 {
                     case 1:
+                        {
+                            Console.Clear();
+                            f.GetAllData();
+                            break;
+                        }
                     case 2:
-                    case 4:     
-                    case 5:
-                        Console.WriteLine("We will Coming Soon :) ");
-                        break;
+                        {
+                            Console.Clear();
+                            Console.Write("Enter Id: ");
+                            int x= int.Parse(Console.ReadLine());
+                            f.GetDataById(x);
+                                break;
+                        }
                     case 3:
                         {
                             Console.Clear();
-                            Student std = new Student();
+                            
                             Console.Write( "Enter Name: ");
                             std.Name = Console.ReadLine();
                             Console.Write("Enter Age: ");
@@ -51,24 +62,33 @@ namespace Demo.PL
                             Console.Write("Enter Degree: ");
                             std.Degree=double.Parse(Console.ReadLine());
                             std.DateCreation = DateTime.Now;
-                            Functions.SaveData(std);
+                            f.SaveData(std);
                             Console.Clear();
                             Console.WriteLine("Adding Done !");
                             break;
                         }
                         
+                    case 4:     
+                        Console.WriteLine("We will Coming Soon :) ");
+                        break;
+                    case 5:
+                        Console.Write("Enter Id to remove: ");
+                        int m =int.Parse(Console.ReadLine());
+                        f.DeleteAllData(m);
+                        break;
                     default:
                         Console.WriteLine("Try Agine ");
                         break;
                 }
                
-                Console.Write("Do Ypu Need Try Agine ? (Y/N): ");
+                Console.Write("Do You Need Try Agine ? (Y/N): ");
                 str = Console.ReadLine();
                 Console.Clear();
 
             } while (str=="Y"||str=="y");
 
-
+           
+         
             
         }
     }

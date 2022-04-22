@@ -17,7 +17,7 @@ namespace Demo.DAL.Database
         //    student.DateCreation = DateTime.Now;
         //}
         public DbSet<Student> std { get; set; }
-
+         
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
