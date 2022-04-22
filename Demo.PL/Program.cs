@@ -16,8 +16,10 @@ namespace Demo.PL
             //Console.SetCursorPosition(leftOffSet, topOffSet);
 
             #endregion
+            #region Objects
             Student std = new Student();
-            Functions f= new Functions();
+            Functions f = new Functions();
+            #endregion
             string str = "";
             do
             {

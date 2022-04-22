@@ -40,20 +40,31 @@ namespace Demo.BL.Functions
             Console.WriteLine("______________________________________");
             try
             {
+               var res= m.Find( x => x.Id == id);
+                if ( res.Id==id)
+                {
+
+              
                 foreach (var item in m.Where(x => x.Id == id))
                 {
 
                     Console.WriteLine($"ID: {item.Id}\n Name: {item.Name}\n Age: {item.Age}\n Degree: {item.Degree}\n DateCreation: {item.DateCreation}\n");
                 }
+                }
+                else
+                {
+                    Console.WriteLine($"\n id: {id} Not Found \n");
+                }
             }
             catch (Exception ex)
             {
 
-                Console.WriteLine("\nNot Found", ex.Message);
+                Console.WriteLine($"\n id: {id} Not Found ", ex.Message);
             }
             finally
             {
-                Console.WriteLine($"\n id: {id} Not Found \n");
+
+                //Console.WriteLine($"\n id: {id} Not Found \n");
             }
             Console.WriteLine("______________________________________");
         }
