@@ -16,7 +16,7 @@ namespace Demo.DAL.Database
         //    Student student = new Student();
         //    student.DateCreation = DateTime.Now;
         //}
-        public DbSet<Student> std { get; set; }
+        public DbSet<Student> stud { get; set; }
          
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
