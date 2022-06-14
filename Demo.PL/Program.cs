@@ -282,6 +282,7 @@ namespace Demo.PL
                                         Name = Name,
                                          Age = Age,
                                         Degree =Degree,
+
                                     };
                                     
                                     students.Add(std1);

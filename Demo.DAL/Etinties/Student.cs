@@ -22,5 +22,7 @@ namespace Demo.DAL.Etinties
         public DateTime DateCreation { get; set; }
         [Required]
         public double Degree { get; set; }
+      
+        
     }
 }

@@ -46,7 +46,7 @@ namespace Demo.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Student");
+                    b.ToTable("Student", (string)null);
                 });
 #pragma warning restore 612, 618
         }

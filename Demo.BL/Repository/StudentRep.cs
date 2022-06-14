@@ -30,11 +30,11 @@ namespace Demo.BL.Repository
                 if (item.Id == id)
                 {
 
-                    return true;
+                    return  true;
                 }
 
             }
-            return false;
+             return  false;
         }
         #endregion
 
@@ -43,7 +43,7 @@ namespace Demo.BL.Repository
 
         public async Task Create(List<StudentVM> obj)
         {
-
+            
             var Students= new List<Student>();
             foreach (var item in obj)
             {
@@ -53,6 +53,7 @@ namespace Demo.BL.Repository
                     Age = item.Age,
                     Degree = item.Degree,
                     DateCreation = item.DateCreation,
+                   
 
                 };
                 Students.Add(std);
